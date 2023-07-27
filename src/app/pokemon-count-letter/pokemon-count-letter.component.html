@@ -1,0 +1,18 @@
+<!--
+<div *ngFor="let key of pokemonCounts | keyvalue">
+    <p>Letra: {{ key.key }} - Cantidad: {{ key.value }}</p>
+  </div>
+  -->
+<!-- Vista normal: dos filas, una para letras y otra para números -->
+<div class="ContainerH1">
+  <h1>"Desglosando Pokémon: Un Conteo Alfabético"</h1>
+</div>
+<div class="pokemonCountLetter">
+  <table class="table-style2">
+    <tr *ngFor="let key of pokemonCounts | keyvalue">
+      <th>{{ key.key }}</th>
+      <td>{{ key.value }}</td>
+    </tr>
+  </table>
+
+</div>

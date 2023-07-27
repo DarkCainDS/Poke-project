@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&family=PT+Serif:ital@1&display=swap');
+
+
+.descriptionContainerImage{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  background-image: url('../../assets/img/background.jpg');
+  background-size: cover;  /* Esto hará que la imagen cubra completamente el div */
+  background-position: center;
+  height: 100px;
+  width: 100px;
+}
+.descriptionContainer{
+  
+  background-color: #FFFFFF;
+  
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  border-radius: 100px;
+  box-shadow: 10px 10px 100px 10px black,
+              inset 10px 10px 1px 0 black;
+
+}
+.descriptionContainerInner{
+  margin: 50px;
+  background-color: transparent;
+  filter: drop-shadow(1px 1px 1px black);
+  display: grid;
+  grid-template-columns: 50% 50%;
+ 
+}
+.descriptionContainerInner-left h2{
+  font-size: 20px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: flex-start;
+  margin: 10px;
+  text-shadow:
+  1px -1px 0 #ff9999, 
+  2px -2px 0 #ff8888, 
+  3px -3px 0 #ff7777, 
+  4px -4px 0 #ff6666, 
+  5px -5px 0 #ff5555, 
+  6px -6px 0 #ff4444, 
+  7px -7px 0 #ff3333, 
+  8px -8px 0 #ff2121;
+}
+.descriptionContainerInner-right{
+  font-size: 15px;
+  text-transform: capitalize;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin: 20px;
+  width: 120px;
+  border: 1px dashed gray;
+  box-shadow: 10px 10px 100px 10px gray;
+}
+@media screen and (max-width: 800px) {
+  .descriptionContainerInner-right{
+    font-size: 10px;
+
+  }
+}

@@ -1,0 +1,33 @@
+<div class="descriptionContainer">
+ 
+  <div *ngIf="selectedPokemonDetails" class="descriptionContainerInner">
+    <div class="descriptionContainerInner-left">
+      <h2>{{ selectedPokemonDetails.name }}</h2>
+      <div class="descriptionContainerImage"> <img
+          [src]="selectedPokemonDetails.sprites.versions['generation-v']['black-white'].animated.front_default || '404poke2.jpg'"
+          (error)="handleImgError($event, 'assets/img/404poke2.jpg')" alt="Pokemon sprite">
+      </div>
+
+    </div>
+
+    <div class="descriptionContainerInner-right">
+      <p>Height: {{ selectedPokemonDetails.height }} m</p>
+      <p>Weight: {{ selectedPokemonDetails.weight }} kg</p>
+      <p>type 1: {{ selectedPokemonDetails?.types[0]?.type?.name }}</p>
+      <p>type 2: {{ selectedPokemonDetails?.types[1]?.type?.name}}</p>
+      
+
+    </div>
+  </div>
+  <div>
+    <ngx-charts-pie-chart
+    [view]="[400,400]"
+    
+    [results]="pieChartData"
+    [legend]="true"
+    [labels]="true"  
+    [doughnut]="false">
+  </ngx-charts-pie-chart>
+  </div>
+
+</div>

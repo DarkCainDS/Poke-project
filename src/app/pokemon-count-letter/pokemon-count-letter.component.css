@@ -1,0 +1,126 @@
+.pokemonCountLetter {
+    display: flex;
+    justify-content: center;
+}
+
+.ContainerH1 {
+    display: flex;
+    justify-content: center;
+    height: 100px;
+
+}
+
+.ContainerH1 h1 {
+    display: flex;
+
+    border-radius: 1000px;
+    text-transform: uppercase;
+    background: linear-gradient(0.50turn, #0086FF, #0086FF, #065eac,black, #D8E5EA, #FFFFFF);
+    font-size: 60px;
+    width: fit-content;
+    border: 5px solid black;
+    color: #fff;
+    text-shadow:
+    1px -1px 0 #99ccff, 
+    2px -2px 0 #88bbff, 
+    3px -3px 0 #77aaff, 
+    4px -4px 0 #6699ff, 
+    5px -5px 0 #5588ff, 
+    6px -6px 0 #4477ff, 
+    7px -7px 0 #3366ff, 
+    8px -8px 0 #2255ff;
+}
+
+.table-style2 {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-gap: 20px;
+    margin: 20px;
+    border: green;
+
+}
+
+.table-style2 th {
+
+    text-transform: uppercase;
+    background: linear-gradient(90deg, red 40%, black 90%);
+    color: yellow;
+    font-size: 40px;
+    text-shadow: -2px -5px 1px blue;
+    border-radius: 40px 0 0 40px;
+    border: 5px solid black;
+
+}
+
+.table-style2 td {
+    font-size: 40px;
+    background: linear-gradient(90deg, black 10%, white 70%);
+    color: white;
+    text-shadow: 1px 5px 1px black;
+    border-radius: 0 40px 40px 0;
+    border: 5px solid black;
+
+}
+
+.table-style2 td,
+.table-style2 th {
+    width: 70px;
+    height: 70px;
+}
+
+.table-style tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+
+
+.table-style tbody tr:hover {
+    transform: scale(1.26);
+    transition: transform 0.1s ease-in-out;
+    background-color: #63c45679;
+    text-shadow: 1px 1px green,
+        1.5px 1px red;
+
+}
+
+.table-style th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+
+}
+
+.button-styles p {
+    font-size: 15px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'PT Serif', serif;
+
+}
+@media screen and (max-width: 1500px) {
+
+    .ContainerH1 h1 {
+        font-size: 30px;
+    }
+    
+}
+@media screen and (max-width: 800px) {
+    .ContainerH1 h1 {
+        font-size: 25px;
+    }
+    .table-style2 {
+        grid-template-columns: 50% 50%;
+        grid-gap: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    /* Tus estilos aquí */
+    .table-style td,
+    .table-style th {
+        font-size: 14px;
+        /* Reduce el tamaño de la fuente */
+
+    }
+
+}

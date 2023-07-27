@@ -1,0 +1,76 @@
+<div class="home">
+
+  <!-- Contenido a la izquierda -->
+  <div class="div-izquierda">
+
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl"
+          [matAutocomplete]="auto">
+        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </form>
+
+    <div class="pokemon-list">
+      <table class="table-style">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pokemon of pokemonData" (click)="getPokemonDetails(pokemon.name)">
+            <td>{{ pokemon.url.split('/')[6] }}</td>
+            <td>{{ pokemon.name | titlecase }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="button-styles">
+      <button (click)="previousPage()" [disabled]="page === 1">Previous</button>
+      <button (click)="nextPage()" [disabled]="page * limit >= totalPokemon">Next Page</button>
+
+      <p>Page: {{page}}</p>
+    </div>
+
+  </div>
+
+  <!-- Contenido a la derecha -->
+  <div class="div-derecha">
+
+
+    <div class="descriptionContainer">
+
+      <div *ngIf="selectedPokemonDetails" class="descriptionContainerInner">
+        <div class="descriptionContainerInner-left">
+          <h2>{{ selectedPokemonDetails.name }}</h2>
+          <div class="descriptionContainerImage"> <img
+              [src]="selectedPokemonDetails.sprites.versions['generation-v']['black-white'].animated.front_default || '404poke2.jpg'"
+              (error)="handleImgError($event, 'assets/img/404poke2.jpg')" alt="Pokemon sprite">
+          </div>
+          <button (click)="setAsFavourite()">Set as favourite</button>
+          <button (click)="clearFavourite()">Clear favourite</button>
+        </div>
+
+        <div class="descriptionContainerInner-right">
+
+          <p>Height: {{ selectedPokemonDetails.height }} m</p>
+          <p>Weight: {{ selectedPokemonDetails.weight }} kg</p>
+          <p>type 1: {{ selectedPokemonDetails?.types[0]?.type?.name }}</p>
+          <p>type 2: {{ selectedPokemonDetails?.types[1]?.type?.name}}</p>
+
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+
+</div>

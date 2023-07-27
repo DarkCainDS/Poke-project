@@ -1,27 +1,36 @@
-# PokeApi
+Pokémon App
+Este es un proyecto Angular que utiliza la PokeAPI para buscar y mostrar información sobre Pokémon. También utiliza Firebase para el hosting y NgRx para el manejo del estado de la aplicación.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.5.
+Características
+Lista de todos los Pokémon con paginación.
+Búsqueda de Pokémon por nombre.
+Visualización de los detalles de un Pokémon específico.
+Capacidad para marcar un Pokémon como favorito.
+Cómo iniciar
+Para iniciar la aplicación en tu entorno local:
 
-## Development server
+Clona este repositorio.
+Ve al directorio del proyecto y ejecuta npm install para instalar todas las dependencias.
+Ejecuta ng serve para iniciar la aplicación. Navega a http://localhost:4200/. La aplicación se recargará automáticamente si cambias alguno de los archivos de origen.
+Despliegue en Firebase
+Para desplegar la aplicación en Firebase:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Instala Firebase CLI con npm install -g firebase-tools.
+Inicia sesión en Firebase con firebase login.
+Inicializa tu proyecto Firebase con firebase init.
+Construye tu aplicación Angular con ng build --prod o ng build --configuration production.
+Despliega tu aplicación en Firebase con firebase deploy.
+Estructura de los componentes
+El componente principal es HomeComponent, que incluye las siguientes funciones:
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+ngOnInit(): Carga los nombres de todos los Pokémon al inicio.
+_filter(value: string): Filtra los nombres de los Pokémon en función del valor de entrada.
+loadAllPokemonNames(): Carga los nombres de todos los Pokémon desde la PokeAPI.
+getPokemonDetails(name: string): Obtiene los detalles de un Pokémon específico.
+loadPokemonNames(page: number): Carga los nombres de los Pokémon para una página específica.
+nextPage(), previousPage(): Funciones para navegar entre las páginas de Pokémon.
+searchPokemon(): Función para buscar Pokémon por nombre.
+setAsFavourite(), clearFavourite(): Funciones para manejar el estado de los Pokémon favoritos.
+handleImgError(event: Event, defaultImgUrl: string): Función para manejar los errores de las imágenes de los Pokémon.
+Contribuciones
+Las contribuciones son bienvenidas. Para cualquier cambio importante, por favor abre un issue primero para discutir lo que te gustaría cambiar.
